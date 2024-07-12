@@ -8,8 +8,12 @@ db = firestore.client()
 
 app = Flask(__name__)
 
-@app.route('/api/projects', methods=['GET'])
+@app.route('/')
 def home():
+    return 'OK'
+
+@app.route('/api/projects', methods=['GET'])
+def get_projects():
     projects_ref = db.collection('projects')
     projects = projects_ref.stream()
     res = []
@@ -18,7 +22,7 @@ def home():
     return jsonify(res)
 
 @app.route('/api/project', methods=['POST'])
-def handle_project_data():
+def save_project():
     if request.method == 'POST':
         data = request.form
 
