@@ -1,1 +1,5 @@
 /frontend/node_modules
+
+
+# API keys
+firebase_sdk_key.json
