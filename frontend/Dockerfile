@@ -2,10 +2,12 @@ FROM node:22
 
 WORKDIR /frontend
 
-COPY public/ frontend/public
-COPY src/ frontend/src
-COPY package.json /frontend/
+COPY public/ public/
+COPY src/ src/
+COPY package*.json ./
 
 RUN npm install
 
-CMD ["npm", "start"]
+COPY . .
+
+CMD ["npm", "run", "dev"]
