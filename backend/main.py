@@ -1,9 +1,12 @@
 import firebase_admin
 from flask import Flask, request, jsonify
 from firebase_admin import credentials, firestore
+from google.cloud import secretmanager
 
-cred = credentials.Certificate("firebase_sdk_key.json")
-firebase_app = firebase_admin.initialize_app(cred)
+manager = secretmanager.SecretManagerServiceClient()
+
+firebase_cred = credentials.Certificate(manager.access_secret_version(request={"name": "firebase_sdk_key"}))
+firebase_app = firebase_admin.initialize_app(firebase_cred)
 db = firestore.client()
 
 app = Flask(__name__)
