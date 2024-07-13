@@ -17,6 +17,20 @@ app = Flask(__name__)
 def home():
     return 'OK'
 
+@app.route('/api/user', methods=['POST'])
+def save_user():
+    if request.method == 'POST':
+        data = request.form
+
+        response = {
+            'username': data.get('username'),
+            'password': data.get('password')
+        }
+        
+        db.collection('users').add(response)
+
+        return jsonify(response), 200
+
 @app.route('/api/projects', methods=['GET'])
 def get_projects():
     projects_ref = db.collection('projects')
@@ -36,12 +50,13 @@ def save_project():
             'location': data.get('location'),
             'start_date': data.get('start_date'),
             'end_date': data.get('end_date'),
-            'description': data.get('description')
+            'description': data.get('description'),
+            'user_id': data.get('user_id')
         }
 
         db.collection('projects').add(response)
 
-        return jsonify(response)
+        return jsonify(response), 200
     
 
 if __name__ == "__main__":
