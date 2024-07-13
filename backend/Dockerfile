@@ -12,4 +12,4 @@ COPY . .
 
 ENTRYPOINT [ "python3" ]
 
-CMD ["main.py"]
+CMD ["main.py", "--host=0.0.0.0:8080"]
