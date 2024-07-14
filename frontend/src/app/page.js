@@ -1,11 +1,16 @@
+"use client";
 import Image from "next/image";
 import styles from "./page.module.css";
+import LoginPage from "./login";
+import VolunteerForm from "./form";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.description}>
         <p>
+          <LoginPage />
+          <VolunteerForm />
           Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.js</code>
         </p>
@@ -93,3 +98,6 @@ export default function Home() {
     </main>
   );
 }
+
+
+// main page to access volunteer/shadowing info
