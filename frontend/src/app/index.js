@@ -1,12 +1,13 @@
-"use client";
 import React from "react";
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import LoginPage from "./LoginPage";
 import Home from "./Home";
 // import volunteer info page
 // import form to input volunteer info page
 
-function Web() {
+export default function Web() {
   return (
     <Router>
       <div>
@@ -18,5 +19,3 @@ function Web() {
     </Router>
   );
 }
-
-export default Web;

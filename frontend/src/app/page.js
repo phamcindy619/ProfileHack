@@ -1,15 +1,12 @@
-"use client";
-import Image from "next/image";
-import styles from "./page.module.css";
 import LoginPage from "./login";
 import VolunteerForm from "./form";
-import Projects from "./components/projects";
+import Projects from "./projects";
 
 export default function Home() {
   return (
     <main>
-      <Projects />
       <LoginPage />
+      <Projects />
       <VolunteerForm />
     </main>
   );

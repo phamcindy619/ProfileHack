@@ -1,6 +1,5 @@
 "use client";
 import { useState } from 'react';
-import ReactDOM from 'react-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -47,11 +46,23 @@ function VolunteerForm() {
       </label>
 
       <label>Start Date:
-      <DatePicker selected={startdate} onChange={(date) => setStartDate(date)} />
+      <input
+        type="text"
+        name="start_date"
+        value={inputs.start_date || ""}
+        onChange={handleChange}
+      />
+      {/* <DatePicker selected={startdate} onChange={(date) => setStartDate(date)} /> */}
       </label>
 
       <label>End Date:
-      <DatePicker selected={enddate} onChange={(date) => setEndDate(date)} />
+      <input
+        type="text"
+        name="end_date"
+        value={inputs.end_date || ""}
+        onChange={handleChange}
+      />
+      {/* <DatePicker selected={enddate} onChange={(date) => setEndDate(date)} /> */}
       </label>
        
       <label>Description of Volunteer Experience:

@@ -1,15 +1,12 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
-import { Link } from "react-router-dom";
 
 function LoginPage() {
   return (
     <div>
-    <img
-      src="medicinelogo.jpg"
-    />
+      <img
+        src="medicinelogo.jpg"
+      />
       <h1>Welcome to Your Medical Portfolio</h1>
-      <Button as={Link} to={"/Home"}>See Home</Button>
     </div>
   );
 }
